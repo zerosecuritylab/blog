@@ -67,19 +67,19 @@ In above example, anything between expression delimiters {{ }} will be evaluated
 Once it is confirmed that anything between expression delimiters is evaluated from this point we can send payloads to start gathering more information.
 
 ## Convert string to Uppercase:
-```java
+```
 Payload: ${{'abc'.toUpperCase()}}
 Output: ABC
 ```
 
 ## Concatenate two strings.
-```java
+```
 Payload: ${{'abc'.concat('def')}} 
 Output: abcdef
 ```
 
 ## Get the class name of string.
-```java
+```
 Payload: ${{'a'.getClass()}} 
 
 Output: java.lang.String
