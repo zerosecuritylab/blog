@@ -1,23 +1,10 @@
 ---
 title: Remote Code execution with EL Injection Vulnerabilities
 ---
-
-
-#
-## Remote Code Execution with EL Injection Vulnerabilities
-
-Asif Durani - asifdurani09@gmail.com - @ksecurity45
-
-**29.01.2019**
-
- 
-
 ##
 ## Abstract
 
-This paper discusses a vulnerability class called &quot;Expression Language Injection (EL Injection)&quot;. Although several security researchers have published details in the past, the bug class is still fairly unknown.
-
-EL Injection is a serious security threat over the Internet for the various dynamic applications. In today&#39;s world, there is a universal need present for dynamic applications. As the use of dynamic applications for various online services is rising, so is the security threats increasing. This paper defines a methodology for detecting and exploiting EL injection.
+This post defines a methodology for detecting and exploiting EL injection.
 
 ##
 ## Introduction
