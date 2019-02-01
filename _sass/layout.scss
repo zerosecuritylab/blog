@@ -201,6 +201,7 @@ img[title="Emerald"] {
 
 code {
   color: lighten($text-color, 35%);
+  overflow-x: scroll;
   background-color: lighten($background-color, 35%);
 }
 
