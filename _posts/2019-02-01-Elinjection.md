@@ -68,19 +68,21 @@ Once it is confirmed that anything between expression delimiters is evaluated fr
 
 **Convert string to Uppercase:**
 
-Payload: ${{'abc'.toUpperCase()}}
+```
+Payload: ${{"abc".toUpperCase()}}
 Output: ABC
+```
 
 
 **Concatenate two strings:**
 ```
-Payload: ${{'abc'.concat('def')}} 
+Payload: ${{"abc".concat("def")}} 
 Output: abcdef
 ```
 
 **Get the class name of string:**
 ```
-Payload: ${{'a'.getClass()}} 
+Payload: ${{"a".getClass()}} 
 
 Output: java.lang.String
 ```
