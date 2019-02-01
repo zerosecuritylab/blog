@@ -262,23 +262,12 @@ Malicious.java
 
 
  
-
-##
 ## Remediation
 
 Whenever possible, applications should avoid incorporating user-controllable data into dynamically evaluated code. In almost every situation, there are safer alternative methods of implementing application functions, which cannot be manipulated to inject arbitrary code into the server&#39;s processing.
 
 If it is considered unavoidable to incorporate user-supplied data into dynamically evaluated code, then the data should be strictly validated. Ideally, a whitelist of specific accepted values should be used. Otherwise, only short alphanumeric strings should be accepted. Input containing any other data, including any conceivable code metacharacters, should be rejected.[7]
 
-
-
-
-
-
-
-
-
-#
 
 # References:
 
