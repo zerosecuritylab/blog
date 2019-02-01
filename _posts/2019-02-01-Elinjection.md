@@ -1,19 +1,16 @@
 ---
 title: Remote Code execution with EL Injection Vulnerabilities
 ---
-##
 ## Abstract
 
 This post defines a methodology for detecting and exploiting EL injection.
 
-##
 ## Introduction
 
 An expression language makes it possible to easily access application data. For example, the JSP expression language allows a page author to access a bean using simple syntax such as ${name} for a simple variable [1].
 
 EL Injection occurs when user input is embedded in an unsafe manner. EL Injection are very serious and lead to complete compromise of the application&#39;s data and functionality and often obtain Remote Code Execution (RCE), turning every vulnerable application into a potential pivot point. Also EL Injection can be used to bypass input filters and any HttpOnly protection for application pages vulnerable to cross-site scripting (XSS) [2].
 
-##
 ## The core problem
 
 To demonstrate the vulnerability. We have two test cases.
@@ -25,14 +22,6 @@ The main difference between the two test cases are
 First test case help us to understand Expression language. We can see an error messages and stack trace which help us to develop our payload.
 
 However, in second test case we demonstrate some tricks how an attacker can still develop a working payload and get remote code execution in black box if he cannot see any error message or stack trace.
-
-#
-
-##
-
-
-
-## First vulnerable Application
 
 ## First vulnerable Application
 
@@ -57,10 +46,7 @@ Suppose the following lines of Code are found in an application.
 
 **Figure 3**. Application get user input from name parameter and echo back in page.
 
-##
 
-
-## Detect &amp; Identify
 
 ## Detect &amp; Identify
 
@@ -172,12 +158,6 @@ In next section we will demonstrate another difficult example how we can constru
 
 
 
-##
-
-
-
-## Second vulnerable Application
-
 ## Second vulnerable Application
 
 The vulnerable application which we are testing does not return any error or stack trace. Our second vulnerable application is using java Prime Faces library. Prime Faces had an EL Injection Vulnerability in older versions till 5.2.21 / 5.3.8 / 6.0
@@ -202,8 +182,6 @@ Payload: ${facesContext.getExternalContext().setResponseHeader(&quot;output&quot
   ![](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png )
 
  
-
-##
 ## Payloads
 
 To get current directory path we can sent payload
@@ -265,7 +243,7 @@ payloadEL += &#39;${request.setAttribute(&quot;b&quot;,request.getClass().getCla
 payloadEL += &#39;${facesContext.getExternalContext().setResponseHeader(&quot;output&quot;, request.getAttribute(&quot;b&quot;).bang())}&#39;
 
 Malicious.java
-
+```java
 1. **public**   **class**  Malicious {
 2.
 3.         **public**   **static**   **void**  bang() {
@@ -280,7 +258,7 @@ Malicious.java
 12.
 13.        }
 14. }
-
+```java
 
 
  
