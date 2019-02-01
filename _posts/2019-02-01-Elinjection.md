@@ -67,10 +67,12 @@ In above example, anything between expression delimiters {{ }} will be evaluated
 Once it is confirmed that anything between expression delimiters is evaluated from this point we can send payloads to start gathering more information.
 
 **Convert string to Uppercase:**
+<pre>
 ```EL
 Payload: ${{'abc'.toUpperCase()}}
 Output: ABC
 ```
+</pre>
 
 **Concatenate two strings:**
 ```
